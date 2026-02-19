@@ -1,0 +1,90 @@
+function [results] = geckoOptKnockGurobi(ecModel, biomassIdx, targetIdx, nKnockouts)
+    % 1. Extraer datos del modelo
+    [nMets, nRxns] = size(ecModel.S);
+    S = ecModel.S;
+    lb = ecModel.lb;
+    ub = ecModel.ub;
+
+    % 2. Identificar Candidatas (Reacciones que usan enzimas)
+    % El protocolo GECKO identifica estas reacciones usualmente por el prefijo 'usage_prot_'
+    % o porque tienen coeficientes cinéticos en la matriz S.
+    candidatas = find(contains(ecModel.rxns, 'usage_prot_'));
+    
+    if isempty(candidatas)
+        % Si no encuentra ese prefijo, buscamos reacciones con coeficientes cinéticos
+        % (reacciones que no son de intercambio ni biomasa)
+        candidatas = setdiff(1:nRxns, [biomassIdx; targetIdx]);
+    end
+    nCan = length(candidatas);
+
+    %% 3. Construcción del Modelo para Gurobi
+    % Variables x = [v (flujos), y (binarias)]
+    % Usaremos la formulación de acoplamiento directo (v <= UB * y)
+    totalVars = nRxns + nCan;
+    
+    model.obj = zeros(totalVars, 1);
+    model.obj(targetIdx) = 1; % Maximizamos el producto
+    model.modelsense = 'max';
+
+    % --- Restricción 1: Balance de Masa (S*v = 0) ---
+    % Incluye automáticamente los términos -(MW/kcat)*v de GECKO
+    model.A = [S, sparse(nMets, nCan)];
+    model.rhs = zeros(nMets, 1);
+    model.sense = repmat('=', nMets, 1);
+
+    % --- Restricción 2: Acoplamiento de Knockouts ---
+    % Para cada reacción candidata: v_j - UB_j * y_j <= 0
+    % Si y_j = 0 (Knockout), entonces v_j = 0.
+    A_knock = sparse(nCan, totalVars);
+    for i = 1:nCan
+        idx = candidatas(i);
+        A_knock(i, idx) = 1;               % flujo v_j
+        A_knock(i, nRxns + i) = -ub(idx);  % -UB * y_j
+    end
+    model.A = [model.A; A_knock];
+    model.rhs = [model.rhs; zeros(nCan, 1)];
+    model.sense = [model.sense; repmat('<', nCan, 1)];
+
+    % --- Restricción 3: Límite de Knockouts ---
+    % sum(y_j) >= nCan - nKnockouts  (limitamos cuántas se apagan)
+    row_lim = sparse(1, totalVars);
+    row_lim(nRxns + 1 : end) = 1;
+    model.A = [model.A; row_lim];
+    model.rhs = [model.rhs; nCan - nKnockouts];
+    model.sense = [model.sense; '>'];
+
+    % --- Restricción 4: Crecimiento Mínimo (Optimalidad de Biomasa) ---
+    % En lugar de dualidad completa (que es inestable en modelos gigantes como GECKO),
+    % forzamos a que la biomasa no sea cero o esté cerca del óptimo.
+    row_bio = sparse(1, totalVars);
+    row_bio(biomassIdx) = 1;
+    model.A = [model.A; row_bio];
+    model.rhs = [model.rhs; 0.01]; % Valor mínimo de crecimiento (puedes ajustarlo)
+    model.sense = [model.sense; '>'];
+
+    %% 4. Configuración de Variables y Solver
+    model.vtype = [repmat('C', 1, nRxns), repmat('B', 1, nCan)];
+    model.lb = [lb; zeros(nCan, 1)];
+    model.ub = [ub; ones(nCan, 1)];
+
+    params.OutputFlag = 1; 
+    params.TimeLimit = 300; % Límite de 5 minutos para evitar bloqueos
+    
+    results = gurobi(model, params);
+
+    %% 5. Mostrar Resultados
+    if strcmp(results.status, 'OPTIMAL') || strcmp(results.status, 'TIME_LIMIT')
+        y_sol = results.x(nRxns + 1 : end);
+        eliminadas = candidatas(y_sol < 0.5);
+        fprintf('\n--- ESTRATEGIA ENCONTRADA ---\n');
+        fprintf('Reacciones/Enzimas a eliminar:\n');
+        if isempty(eliminadas)
+            disp('Ninguna (el modelo ya es óptimo tal cual).');
+        else
+            disp(ecModel.rxns(eliminadas));
+        end
+        fprintf('Flujo del producto: %f\n', results.objval);
+    else
+        fprintf('No se pudo encontrar una solución óptima. Status: %s\n', results.status);
+    end
+end
