@@ -1,12 +1,12 @@
 # Algoritmo de Tasas de Consumo No Convencionales (UOF)
 
-Este proyecto implementa un enfoque alterno para estudiar células de mamíferos (como los macrófagos o células CHO), utilizando el modelo de **Tasas de Consumo No Convencionales (UOF)**. El método identifica conexiones relevantes entre metabolitos aprovechando la sensibilidad de los precios duales.
+Este proyecto implementa un enfoque alterno para estudiar complejas cuyo objetivo no es maximizar su biomasa, utilizando el modelo de **Tasas de Consumo No Convencionales (UOF)**. El método identifica conexiones relevantes entre metabolitos aprovechando la sensibilidad de los precios duales.
 
 ---
 
 ## 1. Problema a resolver
 
-Los macrófagos son células defensivas complejas cuyo interés biológico no se centra únicamente en incrementar su biomasa. Debido a esto, herramientas como el **Análisis de Balance de Flujos (FBA)** pueden no ser exactas. Este algoritmo propone una solución en dos etapas:
+Cuando trabajamos con células complejas cuyo objetivo no es maximizar su biomasa las herramientas como el **Análisis de Balance de Flujos (FBA)** pueden no ser exactas. Este algoritmo propone una solución en dos etapas:
 
 ### Etapa 1: Essential Nutrient Minimization (ENM)
 El algoritmo recibe un modelo metabólico y plantea el siguiente **problema lineal** para cada nutriente:
