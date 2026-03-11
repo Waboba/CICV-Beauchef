@@ -109,6 +109,7 @@ Para la ejecución de la función, es necesario suministrar cuatro argumentos pr
 
 
 En el ejemplo del modelo `iCHOv1_DG44` nos queda el siguiente diccionario:
+
     ```python
    proteinas = {
     'igg_hc_1': 2.6060000000000005e-05, 
