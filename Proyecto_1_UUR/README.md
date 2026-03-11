@@ -54,7 +54,6 @@ Si llamamos $p^*(u)$ al nuevo valor óptimo, existe una relación matemática fu
 
 $$\frac{dp^*(0)}{du} = \lambda^*$$
 
----
 
 ### En palabras sencillas (sin tecnicismos)
 
@@ -67,7 +66,7 @@ Se interpreta como el cambio en el valor óptimo del **nutriente no esencial** f
 * **Si el Precio Dual es cero:** Significa que ese nutriente nos sobra; aunque tuviéramos más, el resultado final no cambiaría porque no es lo que nos está frenando.
 
 
----
+
 
 ## 2. Instalación
 
