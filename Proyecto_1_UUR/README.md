@@ -134,5 +134,17 @@ En el ejemplo del modelo `iCHOv1_DG44` nos queda el siguiente diccionario:
 
 ```
 
+Si queremos entregarle un diccionario, cada entrada consiste en un par ordenado que asocia el nombre del nutriente con su respectiva cota de consumo. De esta forma, el diccionario nos quedaría definido como:
+
+```python
+   medio_nutrientes = [
+       'EX_arg__L_e':20, 'EX_asn__L_e':40, 'EX_asp__L_e':2, 'EX_cys__L_e':100,
+       'EX_gln__L_e':60, 'EX_glc__D_e':20, "EX_his__L_e":2, 'EX_ile__L_e':2, 'EX_leu__L_e':10, 
+       'EX_lys__L_e':40, "EX_met__L_e":20, 'EX_phe__L_e':40, 'EX_pro__L_e', 'EX_ser__L_e':2,
+       'EX_thr__L_e':40, 'EX_trp__L_e':40, 'EX_tyr__L_e':20, 'EX_val__L_e':40, 'EX_hxan_e':2, 'EX_thym_e':2
+   ]
+
+```
+
 
 
