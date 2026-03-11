@@ -78,32 +78,32 @@ A continuación se muetra como instalar y utilizar el programa que aplica lo exp
 4.  **Configuración:** En el script, debemos decirle al programa cuál es el modelo con el que estamos trabajando, para esto debemos decirle donde está guardado el mismo en nuetra computadora. Ve al archivo, click derecho y "Copiar como ruta" ("Copy as path") y deberias tener algo como "C:\Users\tu_usuario\Desktop\iCHOv1_DG44.xml".  Define la ruta de tu modelo anteponiendo una `r`, debería quedar algo como:
 
 
-'ruta_modelo = r"C:\Users\tu_usuario\Desktop\iCHOv1_DG44.xml"'
+`ruta_modelo = r"C:\Users\tu_usuario\Desktop\iCHOv1_DG44.xml"`
 
 Con esto el codigo ya esta funcionando con el modelo que elegiste.
 
 
 ## 3. Cómo usarlo
 
-Recordemos que el algoritmo consta de dos etapas. Cada etapa es una función, ENM o UOF, además hay una tercera función llamado  'mapa\_calor'. Nosotros solamente llamaremos a esta última.
+Recordemos que el algoritmo consta de dos etapas. Cada etapa es una función, ENM o UOF, además hay una tercera función llamado  `mapa\_calor`. Nosotros solamente llamaremos a esta última.
 
 
 Para la ejecución de la función, es necesario suministrar cuatro argumentos principales:
 
-1. **'modelo_base':** Corresponde al modelo metabólico a escala genómica cargado previamente (por ejemplo, el modelo 'iCHOv1\_DG44').
+1. **`modelo_base`:** Corresponde al modelo metabólico a escala genómica cargado previamente (por ejemplo, el modelo `iCHOv1\_DG44`).
 
 
-2. **'proteinas'**: Esta sección define las reacciones de demanda asociadas a la síntesis de proteínas específicas y su flujo metabólico. Para implementarlo, utilizamos un diccionario, una estructura de datos que vincula cada identificador de reacción con su respectiva cota de consumo (tasa de producción).
+2. **`proteinas`**: Esta sección define las reacciones de demanda asociadas a la síntesis de proteínas específicas y su flujo metabólico. Para implementarlo, utilizamos un diccionario, una estructura de datos que vincula cada identificador de reacción con su respectiva cota de consumo (tasa de producción).
 
 De esta manera, el diccionario permite fijar el flujo deseado para cada reacción de la siguiente forma:
 
 
 # Estructura del diccionario de tasas de producción
-tasas_sintesis = {
+`tasas_sintesis = {
     "ID_REACCION_1": tasa_fijada_1,
     "ID_REACCION_2": tasa_fijada_2,
     # ...
     "ID_REACCION_N": tasa_fijada_n
-}
+}`
 
 
