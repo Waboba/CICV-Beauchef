@@ -77,8 +77,8 @@ A continuación se muetra como instalar y utilizar el programa que aplica lo exp
 3.  **Script:** Descarga el archivo `Algoritmo.py` disponible en el GitHub e impórtalo en tu entorno de Python.
 4.  **Configuración:** En el script, debemos decirle al programa cuál es el modelo con el que estamos trabajando, para esto debemos decirle donde está guardado el mismo en nuetra computadora. Ve al archivo, click derecho y "Copiar como ruta" ("Copy as path") y deberias tener algo como "C:\Users\tu_usuario\Desktop\iCHOv1_DG44.xml".  Define la ruta de tu modelo anteponiendo una `r`, debería quedar algo como:
 
-```python
-ruta_modelo = r"C:\Users\tu_usuario\Desktop\iCHOv1_DG44.xml"
+
+'ruta_modelo = r"C:\Users\tu_usuario\Desktop\iCHOv1_DG44.xml"'
 
 Con esto el codigo ya esta funcionando con el modelo que elegiste.
 
