@@ -107,6 +107,7 @@ Para la ejecución de la función, es necesario suministrar cuatro argumentos pr
 
 ```
 
+
 En el ejemplo del modelo `iCHOv1_DG44` nos queda el siguiente diccionario:
     ```python
    proteinas = {
@@ -115,7 +116,7 @@ En el ejemplo del modelo `iCHOv1_DG44` nos queda el siguiente diccionario:
     'igg_formation': 1.303e-05, 
     'DM_igg_g': 1.303e-05
    }
-
+```
 
 
 4. **Lista de Nutrientes (`lista_nutrientes` ó `medio_nutrientes`)**: Define las condiciones del medio extracelular. Esta entrada es flexible y permite entregar tanto una lista de identificadores de reacciones como un diccionario con límites específicos de consumo. Es fundamental especificar este parámetro debido a que los modelos suelen ser "generalistas" y permiten el consumo de una vasta gama de nutrientes. Mediante esta entrada, se acota la disponibilidad de componentes para simular un escenario biológico realista.
@@ -130,7 +131,7 @@ En el ejemplo del modelo `iCHOv1_DG44` nos queda el siguiente diccionario:
        'EX_thr__L_e', 'EX_trp__L_e', 'EX_tyr__L_e', 'EX_val__L_e', 'EX_hxan_e', 'EX_thym_e'
    ]
 
-
+```
 
 
 
