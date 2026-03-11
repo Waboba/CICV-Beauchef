@@ -52,7 +52,8 @@ Si tomamos una restricción $g_i(x) \leq 0$ (un límite de presupuesto o de un r
 
 Si llamamos $p^*(u)$ al nuevo valor óptimo, existe una relación matemática fundamental:
 
-$$\frac{dp^{*}(0)}{du} = \lambda^{*}$$
+$$\frac{dp(0)}{du} = \lambda$$
+
 
 
 ### En palabras sencillas (sin tecnicismos)
