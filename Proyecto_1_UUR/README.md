@@ -39,7 +39,7 @@ $$
 \end{aligned}
 $$
 
-Finalmente, el algoritmo retorna los óptimos y el **precio dual** de cada esencial respecto a cada no esencial.
+Finalmente, el algoritmo retorna los óptimos y el **precio dual** $\lambda$ de cada esencial respecto a cada no esencial.
 
 
 ### ¿Qué es el Precio Dual?
@@ -50,7 +50,7 @@ $$\max p(x) \quad \text{sujeto a} \quad g(x) \leq 0$$
 
 Si tomamos una restricción $g_i(x) \leq 0$ (un límite de presupuesto o de un recurso) y la **relajamos** permitiendo un pequeño margen $u$ (es decir, $g_i(x) \leq u$), el resultado final de nuestro problema cambiará. 
 
-Si llamamos $p^*(u)$ al nuevo valor óptimo, existe una relación matemática fundamental:
+Si llamamos $p(u)$ al nuevo valor óptimo, existe una relación matemática fundamental:
 
 $$\frac{dp(0)}{du} = \lambda$$
 
@@ -58,7 +58,8 @@ $$\frac{dp(0)}{du} = \lambda$$
 
 ### En palabras sencillas (sin tecnicismos)
 
-El **Precio Dual ($\lambda^{*}$)** mide la **sensibilidad**. Nos indica cuánto mejoraría nuestro resultado final si tuviéramos "un poquito más" de un recurso que nos está limitando.
+El **Precio Dual ($\lambda$)** mide la **sensibilidad**. Nos indica cuánto mejoraría nuestro resultado final si tuviéramos "un poquito más" de un recurso que nos está limitando.
+
 
 **En tu caso práctico:**
 Se interpreta como el cambio en el valor óptimo del **nutriente no esencial** frente a una pequeña variación en la cantidad disponible de un **nutriente esencial**.
