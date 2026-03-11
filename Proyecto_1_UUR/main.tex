@@ -1,0 +1,378 @@
+\documentclass[letterpaper,12pt]{article}
+% Paquetes
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish,es-noquoting]{babel}
+\spanishdecimal{.}
+\usepackage[framemethod=TikZ]{mdframed}
+\usepackage{amsfonts,setspace}
+\usepackage{amssymb, amsmath, amsthm}
+\usepackage{mathtools}
+\usepackage{amscd}
+\usepackage{tgschola} 
+\usepackage{comment}
+\usepackage{dsfont}
+\usepackage{esint}
+\usepackage{cancel}
+\usepackage{anysize}
+\usepackage{multicol}
+\usepackage{enumerate}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{wasysym} %Emoticons
+\usepackage[left=20mm,right=20mm,top=20mm,bottom=30mm]{geometry}
+\usepackage{fancyhdr}
+\usepackage{tcolorbox}
+\usepackage{tikz}
+\usepackage{bbm}
+\usepackage{hyperref}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[x11names,dvipsnames]{xcolor}
+\usepackage{float}
+
+\usepackage[svgnames]{xcolor}
+
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=blue
+}
+\definecolor{arylideyellow}{rgb}{0.91, 0.84, 0.42}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Theoremstyle y newcommand
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\theoremstyle{definition}
+    \newtheorem{definicion}{\textcolor{blue}{Definición}}
+    \newtheorem{teorema}{\textcolor{blue}{Teorema}}
+    \newtheorem{corolario}{\textcolor{blue}{Corolario}}[teorema]
+    \newtheorem{lema}{\textcolor{blue}{Lema}}
+    \newtheorem{proposicion}{\textcolor{blue}{Proposición}}
+    \newtheorem*{solucion}{\textcolor{black}{Solución}}
+\theoremstyle{remark}
+    \newtheorem*{comentario}{Comentario}
+    \newtheorem{ejemplo}{Ejemplo}
+    \newtheorem*{notacion}{Notación}
+    
+\newcommand{\MT}[1]{\todo[inline,color=blue!20!green!80!yellow!40!]{Manuel: #1}}
+\definecolor{lightgoldenrodyellow}{rgb}{0.98, 0.98, 0.82}
+\definecolor{aliceblue}{rgb}{0.94, 0.97, 1.0}
+\definecolor{brickred}{rgb}{0.8, 0.25, 0.33}
+
+\surroundwithmdframed[
+        backgroundcolor=Khaki1!30!white,
+        topline=true,
+        rightline=true,
+        bottomline=true,
+        leftline=true,
+        leftmargin=\parindent,
+        skipabove=\medskipamount,
+        skipbelow=\medskipamount
+    ]{solucion}
+
+\newcommand{\A}{\mathbb{A}}
+\newcommand{\B}{\mathbb{B}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\D}{\mathbb{D}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\G}{\mathbb{G}}
+\renewcommand{\H}{\mathbb{H}}
+\newcommand{\I}{\mathbb{I}}
+\newcommand{\J}{\mathbb{J}}
+\newcommand{\K}{\mathbb{K}}
+\renewcommand{\L}{\mathbb{L}}
+\newcommand{\M}{\mathbb{M}}
+\newcommand{\N}{\mathbb{N}}
+\renewcommand{\O}{\mathbb{O}}
+\renewcommand{\P}{\mathbb{P}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\renewcommand{\S}{\mathbb{S}}
+\newcommand{\T}{\mathbb{T}}
+\newcommand{\U}{\mathbb{U}}
+\newcommand{\V}{\mathbb{V}}
+\newcommand{\W}{\mathbb{W}}
+\newcommand{\X}{\mathbb{X}}
+\newcommand{\Y}{\mathbb{Y}}
+\newcommand{\Z}{\mathbb{Z}}
+
+\renewcommand{\AA}{\mathcal{A}}
+\newcommand{\BB}{\mathcal{B}}
+\newcommand{\CC}{\mathcal{C}}
+\newcommand{\DD}{\mathcal{D}}
+\newcommand{\EE}{\mathcal{E}}
+\newcommand{\FF}{\mathcal{F}}
+\newcommand{\GG}{\mathcal{G}}
+\newcommand{\HH}{\mathcal{H}}
+\newcommand{\II}{\mathcal{I}}
+\newcommand{\JJ}{\mathcal{J}}
+\newcommand{\KK}{\mathcal{K}}
+\newcommand{\LL}{\mathcal{L}}
+\newcommand{\MM}{\mathcal{M}}
+\newcommand{\NN}{\mathcal{N}}
+\newcommand{\OO}{\mathcal{O}}
+\newcommand{\PP}{\mathcal{P}}
+\newcommand{\QQ}{\mathcal{Q}}
+\newcommand{\RR}{\mathcal{R}}
+\renewcommand{\SS}{\mathcal{S}}
+\newcommand{\TT}{\mathcal{T}}
+\newcommand{\UU}{\mathcal{U}}
+\newcommand{\VV}{\mathcal{V}}
+\newcommand{\WW}{\mathcal{W}}
+\newcommand{\XX}{\mathcal{X}}
+\newcommand{\YY}{\mathcal{Y}}
+\newcommand{\ZZ}{\mathcal{Z}}
+\newcommand{\adh}{\text{adh}}
+\newcommand{\Fr}{\text{Fr}}
+\newcommand{\inte}{\text{int}}
+\newcommand{\CM}{\text{CM}}
+\newcommand{\dP}{\text{d}\mathbb{P}}
+\newcommand{\limite}{\text{lím}}
+\newcommand{\dx}{\text{d}x}
+\newcommand{\dy}{\text{d}y}
+\newcommand{\dt}{\text{d}t}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\ds}{\text{d}s}
+\newcommand{\qv}[1]{\langle #1,#1 \rangle}
+\newcommand{\prob}[1]{\mathbb{P}\left(#1\right)}
+\newcommand{\esp}[1]{\mathbb{E}\left[#1\right]}
+\newcommand{\var}[1]{\text{Var}\left(#1\right)}
+\newcommand{\abs}[1]{\left|#1\right|}
+\newcommand{\ccont}{C([0,1];\R)}
+\newcommand{\ccontab}{C([a,b];\R)}
+\newcommand{\norm}[1]{\left\lVert #1 \right\rVert}
+\newcommand{\ninf}[1]{\left\lVert#1\right\rVert_{\infty}}
+\newcommand{\ind}{\perp\!\!\!\perp} 
+\newcommand{\bigcdot}{\boldsymbol{\cdot}}
+\newcommand{\dpar}[2]{\dfrac{\partial #1}{\partial #2}}
+\newcommand{\divg}[1]{\nabla \cdot #1}
+\newcommand{\rot}[1]{\text{rot } #1}
+\newcommand{\rotr}[1]{\nabla \times #1}
+\newcommand{\set}[1]{ \left\{ #1 \right\}}
+\newcommand{\parts}[1]{\mathcal{P}(#1)}
+\newcommand{\equi}{\Longleftrightarrow}
+\newcommand{\scj}{\subseteq}
+\newcommand{\card}[1]{\left| #1 \right|}
+\newcommand{\void}{\varnothing}
+\newcommand{\diam}{\text{diam}}
+\newcommand{\pth}[1]{\left( #1 \right)}
+\newcommand{\family}{\set{A_i}_{i\in \N}}
+\newcommand{\salg}[1]{\sigma \left( #1 \right)}
+\newcommand{\cv}{\quad\xrightarrow{c.v.}\quad}
+\newcommand{\MK}{\mathcal M_{nn}(\K)}
+\newcommand{\norma}[1]{\|#1\|}
+\newcommand{\cl}[1]{\overline{#1}}
+\newcommand{\littletaller}{\mathchoice{\vphantom{\big|}}{}{}{}}
+\newcommand{\vspan}[1]{\text{span}\{#1\}}
+\newcommand{\xdual}{X^\ast}
+\newcommand{\inner}[2]{\langle #1 , #2 \rangle}
+\newcommand{\xast}{x^\ast}
+\newcommand{\xddual}{X^{\ast \ast}}
+\newcommand{\sucx}{(x_n)_{n \in \mathbb{N}}}
+\newcommand{\sucy}{(y_n)_{n \in \mathbb{N}}}
+\newcommand{\debil}{\rightharpoonup}
+\newcommand{\tdebil}{\sigma(X,X^\ast)}
+\newcommand{\tdebile}{\sigma(X^\ast,X)}
+\newcommand{\limn}{\lim_{n \to \infty}}
+\newcommand{\ton}{\xrightarrow{n\to \infty}}
+\newcommand{\ssi}{\; \Longleftrightarrow \;}   
+\newcommand{\indic}{\underline{\textit{Indicación.}} }
+\newcommand{\Mnn}{\mathcal{M}_{n \times n}(\mathbb{R})}
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Documento
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+
+\tableofcontents
+\newpage
+
+\section{Problema a resolver.}
+
+Los macrófagos se consideran células defensivas de una gran complejidad. A diferencia de microorganismos más simples, como ocurre con la bacteria \textit{E. coli} y sus derivados, el interés biológico del macrófago no se centra en incrementar su biomasa. 
+
+Esta característica provoca que herramientas como el Análisis de Balance de Flujos (FBA) no sean del todo exactas para determinar sus condiciones óptimas de crecimiento, y presenten dificultades para distinguir entre diferentes cepas dentro de una misma especie. Por esta razón, se han propuesto enfoques alternos para estudiar estas células de mamíferos, tal como el modelo de Tasas de Consumo No Convencionales (UOF) aplicado en células de ovario de hámster chino (CHO). Este método aprovecha la sensibilidad de los precios duales para identificar las conexiones más relevantes entre los distintos metabolitos del sistema. Se plantea un algoritmo que se basa en dos etapas:
+
+\vspace{0.3 cm}
+
+\noindent Etapa uno: \textit{Essential Nutrient Minimization} (ENM): El algoritmo recibe un modelo metabólico, una lista de nutrientes y de proteinas, para plantear el siguiente \textit{problema lineal} para cada nutriente:
+
+
+\begin{equation}
+ \begin{aligned}
+        & {\text{Minimizar}} & &| v_{\text{nutriente}}| \\
+        & \text{sujeto a}               & & S \cdot v = 0, \\
+        &                                && v_{\text{biomasa}}=\mu_{\text{obs}}\\
+          &                               && v_{\text{proteina}}=p_{\text{obs}}\\
+        &                                & & l_j \le v_j \le u_j, \quad \forall j \in\text{Reacciones}\setminus \text{Nutrientes}\\
+        &                                && v_\text{i}\in \mathbb{R} \hspace{0.2 cm}\forall i \text{ Nutriente}
+    \end{aligned}
+\end{equation} 
+
+\noindent Si el optimo de $(2)$ es distinto de cero se introduce a la lista de los  esenciales junto con su consumo mínimo. Finalmente el algorintmo retorna la lista de esenciales y sus valores mínimos. 
+
+\vspace{0.3 cm}
+
+\noindent Etapa dos: \textit{ Uptakes objetive funcions} (UOF): Este algoritmo recibe el mismo imput que el anterior, obtiene la lista de nutrientes esenciales junto a sus respectivos valoras haciendo uso del algoritmo uno y resuelve el siguiente \textit{problema lineal} para cada nutriente no esencial.
+
+
+\begin{equation}
+ \begin{aligned}
+        & {\text{Minimizar}} & &| v_{\text{nutriente}}| \\
+        & \text{sujeto a}               & & S \cdot v = 0, \\
+        &                                && v_{\text{biomasa}}=\mu_{\text{obs}}\\
+          &                               && v_{\text{proteina}}=p_{\text{obs}}\\
+        &                                & & l_j \le v_j \le u_j, \quad \forall j \in\text{Reacciones}\setminus (\text{Esenciales}\cup \{v_\text{nuetrientes}\})\\
+        &                                && v_\text{i}=v_i^{\text{ENM} \hspace{0.2 cm}\forall i \text{ Esenciales}}\\
+        &  &&v_{\text{nutriente}}\in \mathbb{R}
+    \end{aligned}
+\end{equation}
+
+Luego obtiene y retorna los óptimos y el precio dual de cada esencial con respecto a cada no esencial.
+
+
+\newpage
+
+\section{Como instalar el programa.}
+
+\noindent A continuación se muetra como instalar y utilizar el programa que aplica lo explicado anteriormente. Priemro debemos instalar nustro solver de preferencia, por ejemplo Gurobi.
+
+
+\noindent Con esto listo debemos seguir los sigueintes pasos:
+
+\begin{enumerate}
+
+     \item Descargar el modelo metabólico a usar, por motivos ilustrativos haremos la muestra con el modelo  iCHOv1\_DG44 de las células CHO. Una vez descargado es importante guardar el modelo en una carpeta cuya ubicación conozcamos.
+
+
+    \item Descargar el archivo ``Algoritmo.py'' disponible en el Github e importarlo.
+
+    \item A continuación debemos decirle al programa cual es el modelo con el que estamos trabajando, para esto debemos decirle donde está guardado el mismo en nuetra computadora. Vaya al archivo, click derecho y ``Copiar como ruta'' (``Copy as path'') y deberiamos tener algo como ``C:\textbackslash Users\textbackslash tu\_pau\textbackslash Desktop\textbackslash iCHOv1\_DG44.xml''. Ahora vamos a la línea que dice \textcolor{cyan!80!black}{``ruta\_modelo''}, ponemos una ``r'' y pegamos la ruta del archivo, debería quedar así:
+
+
+    \begin{figure}[H] % <--- La H mayúscula es la clave
+    \centering
+    \includegraphics[width=0.8\textwidth]{Captura de pantalla 2026-02-24 164004.png}
+
+    \label{fig:mi_imagen}
+\end{figure}
+
+\end{enumerate}
+
+Con esto el programa ya esta funcionando con el modelo que elegimos. 
+
+\section{Como usar el algoritmo.}
+
+\noindent Recordemos que el algoritmo consta de dos etapas. Cada etapa es una función, ENM o UOF, además hay una tercera función llamado ``mapa\_calor'' que usaremos al final. Nosotros solamente llamaremos a la función ``mapa\_calor'', ésta internamente usrá las dos anteriores.
+
+
+\noindent Para la ejecución de la función, es necesario suministrar tres argumentos principales:
+
+\begin{itemize}
+\item \textbf{\texttt{modelo\_base}}: Corresponde al modelo metabólico a escala genómica cargado previamente (por ejemplo, el modelo \textit{iCHOv1\_DG44}).
+\item \textbf{\texttt{lista\_proteinas}}: Una lista que contiene los identificadores de las \textbf{reacciones de demanda} asociadas a la síntesis de proteínas específicas. Estas reacciones representan el flujo metabólico destinado a la formación de éstas.
+
+\item \textbf{Lista de Nutrientes (``\texttt{lista\_nutrientes}'' o ``\texttt{medio}'')}: Define las condiciones del medio extracelular. Esta entrada es flexible y permite entregar tanto una \textbf{lista} de identificadores de reacciones como un \textbf{diccionario} con límites específicos de consumo. Es fundamental especificar este parámetro debido a que los modelos suelen ser ``generalistas'' y permiten el consumo de una vasta gama de nutrientes (\textit{reacciones tipo EX}). Mediante esta entrada, se acota la disponibilidad de componentes para simular un escenario biológico realista; la distinción técnica entre el uso de una lista o un diccionario se profundizará más adelante.
+\end{itemize}
+
+
+
+
+\noindent Para encontrar la lista de las proteinas (y nutrientes) debemos conocer que reacciones participan en la sitesis de la misma, para imprimir una lsita de todas las reacciones hacemos:
+
+\begin{figure}[H] % <--- La H mayúscula es la clave
+    \centering
+    \includegraphics[width=0.6\textwidth]{Captura de pantalla 2026-02-24 170532.png}
+
+    \label{fig:mi_imagen}
+\end{figure}
+
+\noindent Una vez identificadas las reacciones las escibimos en una nueva lista llamada ``lista\_proteinas''. En el caso del modelo \textit{iCHOv1\_DG44} la lista queda de la siguiente manera
+
+
+
+
+\begin{figure}[H] % <--- La H mayúscula es la clave
+    \centering
+    \includegraphics[width=1\textwidth]{Captura de pantalla 2026-03-07 013356.png}
+
+    \label{fig:mi_imagen}
+\end{figure}
+
+
+\noindent Finalmente, queda otorgarle una lista de nutrientes o un medio; la elección entre ambos dependerá de la naturaleza del modelo. Para modelos generalistas, es necesario entregar un medio, pues se requiere controlar con precisión las cantidades y la disponibilidad de las reacciones de intercambio.
+
+\begin{enumerate}
+    \item Si solo se entrega una lista de nutrientes, basta con crear la lista \texttt{lista\_nutrientes} que contenga las reacciones que presenten el prefijo \texttt{EX\_} (generalmente no se requieren todas, por lo que se deben escoger solo aquellas de interés para el estudio). En el caso de nuestro modelo, la definición de la lista queda de la siguiente forma:
+
+    \begin{figure}[H] % <--- La H mayúscula es la clave
+    \centering
+    \includegraphics[width=1\textwidth]{Captura de pantalla 2026-03-07 013944}
+
+    \label{fig:mi_imagen}
+    \end{figure}
+
+  \item  Si queremos otorgarle un medio, se debe crear un \textit{diccionario}; es decir, una estructura de datos donde cada entrada consiste en un par ordenado que asocia el nombre del nutriente con su respectiva cota de consumo. De esta forma, el diccionario nos quedaría definido como:
+
+  \begin{figure}[H] % <--- La H mayúscula es la clave
+    \centering
+    \includegraphics[width=0.4\textwidth]{Captura de pantalla 2026-03-07 014504}
+
+    \label{fig:mi_imagen}
+    \end{figure}
+    
+Con esto, los nutrientes incluidos en el diccionario quedan configurados con las cotas indicadas, mientras que el resto de las reacciones de intercambio del modelo se desactivan automáticamente (se fijan en cero).
+
+  
+
+
+\end{enumerate}
+
+
+Finalmente, solo queda realizar el llamado a la función. Dependiendo de la estructura de datos elegida, el comando se debe ejecutar de la siguiente forma:
+
+\begin{itemize}
+\item Si se decidió entregar una lista:
+
+
+``mapa\_calor(modelo\_base, lista\_proteinas, lista=lista\_nutrientes)''
+
+\item Si se decidió entregar un medio:
+
+``mapa\_calor(modelo\_base, lista\_proteinas, medio=medio\_nutrientes)''
+
+\end{itemize}
+
+\noindent Es fundamental destacar la importancia de especificar explícitamente el argumento mediante el signo igual (\texttt{lista=} o \texttt{medio=}) en la tercera parte de la función. Esto se debe a que la función está diseñada para identificar la naturaleza de la entrada (si es un conjunto de reacciones abiertas o un medio restrictivo) y procesar los cálculos de sensibilidad en consecuencia. Omitir esta asignación explícita provocará incongruencias en el mapa de calor.
+
+
+\noindent Y con esto se nos imprimira nuestro mapa de calor de la siguiente manera: 
+ 
+\begin{figure}[H] % <--- La H mayúscula es la clave
+    \centering
+    \includegraphics[width=0.8\textwidth]{Captura de pantalla 2026-02-25 124037.png}
+
+    \label{fig:mi_imagen}
+\end{figure}
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
