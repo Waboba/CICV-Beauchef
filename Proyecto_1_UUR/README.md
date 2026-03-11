@@ -61,7 +61,7 @@ $$\frac{dp(0)}{du} = \lambda$$
 El **Precio Dual ($\lambda$)** mide la **sensibilidad**. Nos indica cuánto cambiaría nuestro resultado final si tuviéramos "un poquito más" de un recurso que nos está limitando.
 
 
-**En nuetro caso:**
+**En nuestro caso:**
 Se interpreta como el cambio en el valor óptimo del **nutriente no esencial** frente a una pequeña variación en la cantidad disponible de un **nutriente esencial**.
 
 * **Si el Precio Dual es alto:** Significa que ese nutriente esencial es un "cuello de botella". Si consiguiéramos un poco más, nuestro objetivo final mejoraría mucho.
