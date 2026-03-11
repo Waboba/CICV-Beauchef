@@ -97,7 +97,7 @@ Para la ejecución de la función, es necesario suministrar cuatro argumentos pr
 
 3. **`proteinas`**: Esta sección define las reacciones de demanda asociadas a la síntesis de proteínas específicas y su flujo metabólico. Para implementarlo, utilizamos un diccionario, una estructura de datos que vincula cada identificador de reacción con su respectiva cota de consumo (tasa de producción). De esta manera, el diccionario permite fijar el flujo deseado para cada reacción de la siguiente forma:
 
-   ```python
+```python
    tasas_sintesis = {
        "ID_REACCION_1": tasa_fijada_1,
        "ID_REACCION_2": tasa_fijada_2,
@@ -110,7 +110,7 @@ Para la ejecución de la función, es necesario suministrar cuatro argumentos pr
 
 En el ejemplo del modelo `iCHOv1_DG44` nos queda el siguiente diccionario:
 
-    ```python
+```python
    proteinas = {
     'igg_hc_1': 2.6060000000000005e-05, 
     'igg_lc_1': 2.606e-05, 
@@ -124,7 +124,7 @@ En el ejemplo del modelo `iCHOv1_DG44` nos queda el siguiente diccionario:
 
    Si deseamos entregar una lista sólo debemos rellenarla con los nombres de las reacciones, en el caso del modelo `iCHOv1_DG44` queda:
 
-   ```python
+```python
    lista_nutrientes = [
        'EX_arg__L_e', 'EX_asn__L_e', 'EX_asp__L_e', 'EX_cys__L_e',
        'EX_gln__L_e', 'EX_glc__D_e', "EX_his__L_e", 'EX_ile__L_e', 'EX_leu__L_e', 
