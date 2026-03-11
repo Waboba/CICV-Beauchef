@@ -56,12 +56,12 @@ $$\frac{dp(0)}{du} = \lambda$$
 
 
 
-### En palabras sencillas (sin tecnicismos)
+### Como se interpreta
 
-El **Precio Dual ($\lambda$)** mide la **sensibilidad**. Nos indica cuánto mejoraría nuestro resultado final si tuviéramos "un poquito más" de un recurso que nos está limitando.
+El **Precio Dual ($\lambda$)** mide la **sensibilidad**. Nos indica cuánto cambiaría nuestro resultado final si tuviéramos "un poquito más" de un recurso que nos está limitando.
 
 
-**En tu caso práctico:**
+**En nuetro caso:**
 Se interpreta como el cambio en el valor óptimo del **nutriente no esencial** frente a una pequeña variación en la cantidad disponible de un **nutriente esencial**.
 
 * **Si el Precio Dual es alto:** Significa que ese nutriente esencial es un "cuello de botella". Si consiguiéramos un poco más, nuestro objetivo final mejoraría mucho.
@@ -72,10 +72,12 @@ Se interpreta como el cambio en el valor óptimo del **nutriente no esencial** f
 
 ## 2. Instalación
 
+A continuación se muetra como instalar y utilizar el programa que aplica lo explicado anteriormente. Por motivos ilustrativos haremos la muestra con el modelo  `iCHOv1_DG44.xml` de las células CHO.
+
 1.  **Solver:** Instala tu solver de preferencia (por ejemplo, **Gurobi**).
 2.  **Modelo:** Descarga el modelo metabólico (ej. `iCHOv1_DG44.xml`) y guárdalo en una ubicación conocida.
-3.  **Script:** Descarga el archivo `Algoritmo.py` e impórtalo en tu entorno de Python.
-4.  **Configuración:** En el script, define la ruta de tu modelo anteponiendo una `r` para evitar errores de caracteres:
+3.  **Script:** Descarga el archivo `Algoritmo.py` disponible en el GitHub e impórtalo en tu entorno de Python.
+4.  **Configuración:** En el script, debemos decirle al programa cuál es el modelo con el que estamos trabajando, para esto debemos decirle donde está guardado el mismo en nuetra computadora. Ve al archivo, click derecho y ``Copiar como ruta'' (``Copy as path'') y deberias tener algo como "C:\Users\tu_usuario\Desktop\iCHOv1_DG44.xml".  Define la ruta de tu modelo anteponiendo una `r`, debería quedar algo como:
 
 ```python
 ruta_modelo = r"C:\Users\tu_usuario\Desktop\iCHOv1_DG44.xml"
