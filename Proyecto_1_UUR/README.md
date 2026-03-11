@@ -93,7 +93,7 @@ Para la ejecución de la función, es necesario suministrar cuatro argumentos pr
 1. **`modelo_base`:** Corresponde al modelo metabólico a escala genómica cargado previamente (por ejemplo, el modelo `iCHOv1\_DG44`).
 
 
-2. **`proteinas`**: Esta sección define las reacciones de demanda asociadas a la síntesis de proteínas específicas y su flujo metabólico. Para implementarlo, utilizamos un diccionario, una estructura de datos que vincula cada identificador de reacción con su respectiva cota de consumo (tasa de producción). De esta manera, el diccionario permite fijar el flujo deseado para cada reacción de la siguiente forma:
+3. **`proteinas`**: Esta sección define las reacciones de demanda asociadas a la síntesis de proteínas específicas y su flujo metabólico. Para implementarlo, utilizamos un diccionario, una estructura de datos que vincula cada identificador de reacción con su respectiva cota de consumo (tasa de producción). De esta manera, el diccionario permite fijar el flujo deseado para cada reacción de la siguiente forma:
 
 
   `tasas_sintesis = {
@@ -102,11 +102,48 @@ Para la ejecución de la función, es necesario suministrar cuatro argumentos pr
     # ...
     "ID_REACCION_N": tasa_fijada_n
   }`
+
+
+  
   En el ejemplo del modelo `iCHOv1\_DG44` nos queda el siguiente diccionario:
 
  `proteinas ={ 'igg_hc_1':2.6060000000000005e-05 , 'igg_lc_1':2.606e-05, 'igg_formation':1.303e-05, 'DM_igg_g':1.303e-05}`
 
 
-  3.**Lista de Nuetrientes (`lista_nutrientes` ó `medio`)**:  Define las condiciones del medio extracelular. Esta entrada es flexible y permite entregar tanto una lista de identificadores de reacciones como un diccionario con límites específicos de consumo. Es fundamental especificar este parámetro debido a que los modelos suelen ser "generalistas" y permiten el consumo de una vasta gama de nutrientes. Mediante esta entrada, se acota la disponibilidad de componentes para simular un escenario biológico realista; la distinción técnica entre el uso de una lista o un diccionario se profundizará más adelante.
+  4.**Lista de Nuetrientes (`lista_nutrientes` ó `medio`)**:  Define las condiciones del medio extracelular. Esta entrada es flexible y permite entregar tanto una lista de identificadores de reacciones como un diccionario con límites específicos de consumo. Es fundamental especificar este parámetro debido a que los modelos suelen ser "generalistas" y permiten el consumo de una vasta gama de nutrientes. Mediante esta entrada, se acota la disponibilidad de componentes para simular un escenario biológico realista; la distinción técnica entre el uso de una lista o un diccionario se profundizará más adelante.
+
+
+
+  
+1. **`modelo_base`**: Corresponde al modelo metabólico a escala genómica cargado previamente (por ejemplo, el modelo `iCHOv1_DG44`).
+
+3. **`proteinas`**: Esta sección define las reacciones de demanda asociadas a la síntesis de proteínas específicas y su flujo metabólico. Para implementarlo, utilizamos un diccionario, una estructura de datos que vincula cada identificador de reacción con su respectiva cota de consumo (tasa de producción). De esta manera, el diccionario permite fijar el flujo deseado para cada reacción de la siguiente forma:
+
+   ```python
+   tasas_sintesis = {
+       "ID_REACCION_1": tasa_fijada_1,
+       "ID_REACCION_2": tasa_fijada_2,
+       # ...
+       "ID_REACCION_N": tasa_fijada_n
+   }
+
+```
+
+En el ejemplo del modelo `iCHOv1_DG44` nos queda el siguiente diccionario:
+
+```python
+proteinas = {
+    'igg_hc_1': 2.6060000000000005e-05, 
+    'igg_lc_1': 2.606e-05, 
+    'igg_formation': 1.303e-05, 
+    'DM_igg_g': 1.303e-05
+}
+
+```
+
+4. **Lista de Nutrientes (`lista_nutrientes` ó `medio`)**: Define las condiciones del medio extracelular. Esta entrada es flexible y permite entregar tanto una lista de identificadores de reacciones como un diccionario con límites específicos de consumo. Es fundamental especificar este parámetro debido a que los modelos suelen ser "generalistas" y permiten el consumo de una vasta gama de nutrientes. Mediante esta entrada, se acota la disponibilidad de componentes para simular un escenario biológico realista; la distinción técnica entre el uso de una lista o un diccionario se profundizará más adelante.
+
+```
+
 
 
