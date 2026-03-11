@@ -91,7 +91,7 @@ Recordemos que el algoritmo consta de dos etapas. Cada etapa es una función, EN
 Para la ejecución de la función, es necesario suministrar cuatro argumentos principales:
 
   
-1. **`modelo_base`**: Corresponde al modelo metabólico a escala genómica cargado previamente (por ejemplo, el modelo `iCHOv1_DG44`).
+1. **`modelo_base`**: Corresponde al modelo metabólico a escala genómica cargado previamente (por ejemplo, el modelo `iCHOv1_DG44`). Una vez hayamos indicado la ruta del modelo como se explicó anterioremnte, este dato queda autamaticamente guardado con el nombre `modelo_base`.
 2. **`mu_medido`**: Corresponde a la tasa fija de producción de biomasa que impongamos, es un número.
    
 
