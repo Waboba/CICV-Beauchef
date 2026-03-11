@@ -41,6 +41,32 @@ $$
 
 Finalmente, el algoritmo retorna los óptimos y el **precio dual** de cada esencial respecto a cada no esencial.
 
+
+### ¿Qué es el Precio Dual?
+
+Imaginemos que tenemos un problema de optimización, por ejemplo, queremos maximizar un beneficio:
+
+$$\max p(x) \quad \text{sujeto a} \quad g(x) \leq 0$$
+
+Si tomamos una restricción $g_i(x) \leq 0$ (un límite de presupuesto o de un recurso) y la **relajamos** permitiendo un pequeño margen $u$ (es decir, $g_i(x) \leq u$), el resultado final de nuestro problema cambiará. 
+
+Si llamamos $p^*(u)$ al nuevo valor óptimo, existe una relación matemática fundamental:
+
+$$\frac{dp^*(0)}{du} = \lambda^*$$
+
+---
+
+### En palabras sencillas (sin tecnicismos)
+
+El **Precio Dual ($\lambda^*$)** mide la **sensibilidad**. Nos indica cuánto mejoraría nuestro resultado final si tuviéramos "un poquito más" de un recurso que nos está limitando.
+
+**En tu caso práctico:**
+Se interpreta como el cambio en el valor óptimo del **nutriente no esencial** frente a una pequeña variación en la cantidad disponible de un **nutriente esencial**.
+
+* **Si el Precio Dual es alto:** Significa que ese nutriente esencial es un "cuello de botella". Si consiguiéramos un poco más, nuestro objetivo final mejoraría mucho.
+* **Si el Precio Dual es cero:** Significa que ese nutriente nos sobra; aunque tuviéramos más, el resultado final no cambiaría porque no es lo que nos está frenando.
+
+
 ---
 
 ## 2. Instalación
