@@ -151,13 +151,13 @@ Finalmente, solo queda realizar el llamado a la función. Dependiendo de la estr
 a). **Si se decidió entregar una lista**: 
 
 ```python
-mapa_calor(modelo_base, mu_medido, lista_proteinas, lista=lista_nutrientes)
+mapa_calor(modelo_base, mu_medido, proteinas, lista=lista_nutrientes)
 ```
 
 a). **Si se decidió entregar un medio**:
 
 ```python
-mapa_calor(modelo_base, mu_medido, lista_proteinas, medio=medio_nutrientes)
+mapa_calor(modelo_base, mu_medido, proteinas, medio=medio_nutrientes)
 ```
 
 
