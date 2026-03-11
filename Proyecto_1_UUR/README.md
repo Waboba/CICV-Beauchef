@@ -146,5 +146,26 @@ Si queremos entregarle un diccionario, cada entrada consiste en un par ordenado 
 
 ```
 
+Finalmente, solo queda realizar el llamado a la función. Dependiendo de la estructura de datos elegida, el comando se debe ejecutar de la siguiente forma:
 
+a). **Si se decidió entregar una lista**: 
+
+```python
+mapa_calor(modelo_base, mu_medido, lista_proteinas, lista=lista_nutrientes)
+```
+
+a). **Si se decidió entregar un medio**:
+
+```python
+mapa_calor(modelo_base, mu_medido, lista_proteinas, medio=medio_nutrientes)
+```
+
+
+
+Es fundamental destacar la importancia de especificar explícitamente el argumento mediante el signo igual (`lista=` o `medio=`) en la cuarta parte de la función. Esto se debe a que la función está diseñada para identificar la naturaleza de la entrada (si es un conjunto de reacciones abiertas o un medio restrictivo) y procesar los cálculos de sensibilidad en consecuencia. Omitir esta asignación explícita provocará incongruencias en el mapa de calor.
+
+Y con esto se nos imprimira nuestro mapa de calor de la siguiente manera: 
+
+
+<img width="1090" height="790" alt="output" src="https://github.com/user-attachments/assets/8b08447f-418b-46a1-9b62-96d4145f364b" />
 
