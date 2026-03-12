@@ -1,6 +1,6 @@
 # CICV-Beauchef
 Repositorio de proyectos de colaboración CICV-Beauchef en 2026. Los proyectos están separados por carpeta.
-Los proyectos de 1 a 3 son en base a modelos metabólicos de balance de flujo:
+Los proyectos de 1 a 3 son en base a modelos metabólicos de balance de flujo y cómo adaptar sus limitaciones:
 
 ## Análisis de Balance de Flujos (Flux Balance Analysis - FBA)
 
