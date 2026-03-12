@@ -1,6 +1,6 @@
 # Algoritmo de Tasas de Consumo No Convencionales (UOF)
 
-Este proyecto implementa un enfoque alterno para estudiar complejas cuyo objetivo no es maximizar su biomasa, utilizando el modelo de **Tasas de Consumo No Convencionales (UOF)**. El método identifica conexiones relevantes entre metabolitos aprovechando la sensibilidad de los precios duales.
+Este proyecto implementa un enfoque alterno para estudiar células complejas cuyo objetivo principal no es maximizar su biomasa. El método **Tasas de Consumo No Convencionales (UOF)** identifica conexiones relevantes entre metabolitos aprovechando la sensibilidad de los precios duales.
 
 ---
 
@@ -52,17 +52,16 @@ Si tomamos una restricción $g_i(x) \leq 0$ (un límite de presupuesto o de un r
 
 Si llamamos $p(u)$ al nuevo valor óptimo, existe una relación matemática fundamental:
 
-$$\frac{dp(0)}{du} = \lambda$$
-
+$$\frac{dp(0)}{du} = -\lambda$$
 
 
 ### Como se interpreta
 
-El **Precio Dual ($\lambda$)** mide la **sensibilidad**. Nos indica cuánto cambiaría nuestro resultado final si tuviéramos "un poquito más" de un recurso que nos está limitando.
+El **Precio Dual ($\lambda$)** mide la **sensibilidad**. Nos indica cuánto cambiaría nuestro resultado final si tuviéramos "un poco más o un poco menos" de un recurso que nos está limitando.
 
 
 **En nuestro caso:**
-Se interpreta como el cambio en el valor óptimo del **nutriente no esencial** frente a una pequeña variación en la cantidad disponible de un **nutriente esencial**.
+Se interpreta como el cambio en el consumo mínimo del **nutriente no esencial** frente a una pequeña variación en la cantidad disponible de un **nutriente esencial**.
 
 
 
@@ -72,10 +71,14 @@ Se interpreta como el cambio en el valor óptimo del **nutriente no esencial** f
 
 A continuación se muetra como instalar y utilizar el programa que aplica lo explicado anteriormente. Por motivos ilustrativos haremos la muestra con el modelo  `iCHOv1_DG44.xml` de las células CHO.
 
-1.  **Solver:** Instala tu solver de preferencia (por ejemplo, **Gurobi**).
+1.  **Solver (Opcional):** Instalar un de preferencia (por ejemplo, [**Gurobi**](https://www.gurobi.com/lp/all/do-more-with-gurobi/?utm_source=google&utm_medium=cpc&utm_campaign=2026+latam+googleads+search+brand&utm_content=dmwg-chal&gad_source=1&gad_campaignid=22288693800&gbraid=0AAAAADimQ3iMxfwrfGM2IBCV46v51LHQr&gclid=CjwKCAjwyMnNBhBNEiwA-Kcgu3UdoGkJteABE3d0fxsC8Mua-CK0g-rLbl_nh0Ee3nHwbXMjAMWAnBoCtm4QAvD_BwE).
 2.  **Modelo:** Descarga el modelo metabólico (ej. `iCHOv1_DG44.xml`) y guárdalo en una ubicación conocida.
-3.  **Script:** Descarga el archivo `Algoritmo.py` disponible en el GitHub e impórtalo en tu entorno de Python.
-4.  **Configuración:** En el script, debemos decirle al programa cuál es el modelo con el que estamos trabajando, para esto debemos decirle donde está guardado el mismo en nuetra computadora. Ve al archivo, click derecho y "Copiar como ruta" ("Copy as path") y deberias tener algo como "C:\Users\tu_usuario\Desktop\iCHOv1_DG44.xml".  Define la ruta de tu modelo anteponiendo una `r`, debería quedar algo como:
+3.  **Script:** Clona este repositorio desde tu consola de comandos:
+```
+git clone https://github.com/Waboba/CICV-Beauchef/tree/main/Proyecto_1_UUR
+
+```
+5.  **Configuración:** En el script, debemos decirle al programa cuál es el modelo con el que estamos trabajando, para esto debemos decirle donde está guardado el mismo en nuetra computadora. Ve al archivo, click derecho y "Copiar como ruta" ("Copy as path") y deberias tener algo como "C:\Users\tu_usuario\Desktop\iCHOv1_DG44.xml".  Define la ruta de tu modelo anteponiendo una `r`, debería quedar algo como:
 
 
 `ruta_modelo = r"C:\Users\tu_usuario\Desktop\iCHOv1_DG44.xml"`
