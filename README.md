@@ -1,6 +1,7 @@
 # CICV-Beauchef
-<img src="[TU_URL_DE_IMAGEN_AQUI](https://pbs.twimg.com/profile_images/1509939244382490624/HpHnMwQC.jpg)" alt="CICV" width="50%">
+<img src="[https://pbs.twimg.com/profile_images/1509939244382490624/HpHnMwQC.jpg]" alt="CICV" width="50%">
 
+<img src="
 Repositorio de proyectos de colaboración CICV-Beauchef en 2026. Los proyectos están separados por carpeta.
 Los proyectos de 1 a 3 son en base a modelos metabólicos de balance de flujo y cómo adaptar sus limitaciones:
 
