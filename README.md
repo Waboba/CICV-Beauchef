@@ -1,4 +1,5 @@
 # CICV-Beauchef
+!(https://cicv.live/wp-content/uploads/2022/02/Imagen-cicvlogoo.png)
 Repositorio de proyectos de colaboración CICV-Beauchef en 2026. Los proyectos están separados por carpeta.
 Los proyectos de 1 a 3 son en base a modelos metabólicos de balance de flujo y cómo adaptar sus limitaciones:
 
