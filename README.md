@@ -1,5 +1,5 @@
 # CICV-Beauchef
-<img src="[https://pbs.twimg.com/profile_images/1509939244382490624/HpHnMwQC.jpg]" alt="CICV" width="50%">
+<img src="https://pbs.twimg.com/profile_images/1509939244382490624/HpHnMwQC.jpg" alt="CICV" width="50%">
 
 <img src="
 Repositorio de proyectos de colaboración CICV-Beauchef en 2026. Los proyectos están separados por carpeta.
