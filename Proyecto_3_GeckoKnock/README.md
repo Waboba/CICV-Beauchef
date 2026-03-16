@@ -1,4 +1,4 @@
-# 🧬 OptKnock-GECKO: Diseño Metabólico en *S. cerevisiae*
+# OptKnock-GECKO: Diseño Metabólico en *S. cerevisiae*
 
 ![Status](https://img.shields.io/badge/Status-In%20Development-yellow)
 ![MATLAB](https://img.shields.io/badge/MATLAB-R2021a%2B-blue)
@@ -8,7 +8,7 @@ Este repositorio contiene una implementación avanzada de **OptKnock Dual** adap
 
 ---
 
-## 📌 Tabla de Contenidos
+# Tabla de Contenidos
 - [Requisitos](#-requisitos)
 - [Estructura del Proyecto](#-estructura-del-proyecto)
 - [Instalación](#-instalación)
@@ -17,7 +17,7 @@ Este repositorio contiene una implementación avanzada de **OptKnock Dual** adap
 
 ---
 
-## 📋 Requisitos
+## Requisitos
 
 Para utilizar este programa, es necesario contar con el siguiente stack tecnológico:
 
@@ -35,7 +35,7 @@ Para utilizar este programa, es necesario contar con el siguiente stack tecnoló
 
 ---
 
-## 📁 Estructura del Proyecto
+##  Estructura del Proyecto
 
 El repositorio se organiza de la siguiente manera:
 
@@ -45,7 +45,7 @@ El repositorio se organiza de la siguiente manera:
 
 ---
 
-## ⚙️ Instalación
+##  Instalación
 
 1.  **Clonar el repositorio:**
     ```bash
@@ -61,7 +61,7 @@ El repositorio se organiza de la siguiente manera:
 
 ---
 
-## 🚀 Guía de Uso
+##  Guía de Uso
 
 Para ejecutar un diseño de producción, sigue estos pasos:
 
@@ -75,7 +75,7 @@ Para ejecutar un diseño de producción, sigue estos pasos:
 
 ---
 
-## 🧠 Lógica del Algoritmo
+##  Lógica del Algoritmo
 
 El programa resuelve un problema de optimización bi-nivel. Mientras el usuario busca maximizar el producto, la célula busca maximizar su biomasa. 
 
