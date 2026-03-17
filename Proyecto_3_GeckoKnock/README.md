@@ -1,4 +1,4 @@
-# OptKnock-GECKO: Diseño Metabólico en *S. cerevisiae*
+# OptKnock-GECKO
 
 ![Status](https://img.shields.io/badge/Status-In%20Development-yellow)
 ![MATLAB](https://img.shields.io/badge/MATLAB-R2021a%2B-blue)
