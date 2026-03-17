@@ -1,0 +1,23 @@
+[project]
+name = "wl-distance"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "cvxpy>=1.7.3",
+    "grakel",
+    "igraph>=0.11.9",
+    "networkx>=3.4.2",
+    "numpy<2.0",
+    "pandas>=2.3.2",
+    "pot>=0.9.6.post1",
+    "pyarrow>=21.0.0",
+    "torch>=2.8.0",
+    "torch-geometric>=2.6.1",
+    "tqdm>=4.67.1",
+    "wtk>=0.2.1.3",
+]
+
+[tool.uv.sources]
+grakel = { git = "https://github.com/ysig/GraKeL", rev = "c191bbe033ffa5b7bc4c7ccd34e2ac5d8d7b9bcd" }

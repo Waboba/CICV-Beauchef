@@ -1,0 +1,46 @@
+# Basic parameters.
+
+parameters:
+  G: "data/Haloferax_volcanii.gml"          # Path to to target network (in gml format). Ignored if graph_data is provided (and can be left empty).
+  graph_data:          # If network was already sampled, provide path to .npz file here.
+  n_g: 4          # Maximum order of graphlets taken into account. Can be 3, 4 or 5.
+
+
+# Parameters related to sampling. These are also ignored if graph_data is provided.
+
+sampling:
+  S: 10000          # Number of samples.
+  savefile: "H_volcanii"          # If provided, results will be stored under savefile.npz.
+  plot: False          # If True, plot the degree distribution and graphlet frequencies.
+
+
+# General graph generator parameters.
+
+generator:
+  model: "GRAIP"          # Pick a generator model. Can be "GRAIP", "SwapCon" or "BA".
+  graphs: 10          # The number of graphs to be generated.
+  savepath: "new_graphs"          # Graphs are saved in edge list format under savepath/[model]_graph[n].txt
+
+
+# Specific to GRAIP (ignored for other models).
+
+GRAIP:
+  max_s:           # Maximum number of iterations. If not specified, this is set to 100 times the mean number of edges.
+  node_step: 5          # A node is added or removed every node_step steps.
+  w: 0.667          # Weight factor for the cost function.
+  max_rej:         # A modification is always accepted after max_rey rejected. If not specified, this is set to 2% of the mean number of edges.
+
+
+# Specific to SwapCon (ignored for other models).
+
+SwapCon:
+  temperature: 0.01          # Initial temperature for simulated annealing.
+  cooling: 0.99          # Cooling factor for simulated annealing. Should be <1.
+  threshold: 0.05          # Energy threshold for convergence of simulated annealing.
+  max_reject:           # Alternatively, simulated annealing is stopped after max_reject rejected swaps in a row. If not specified, this is set to the mean number of edges.
+
+
+evaluation:
+  metric: "TWWL"   # "degree", "graphlets", "TWWL"
+  twwl_H: 5
+  twwl_lambda: 1.0

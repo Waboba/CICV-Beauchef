@@ -1,0 +1,71 @@
+[BZR]
+git-tree-sha1 = "78c30f3e410eb4f446cf5e1fe3268090795e6af5"
+
+[BZR_MD]
+git-tree-sha1 = "cc37d457afea828a6d74769ea72ec3b2c36bcc98"
+
+[COIL-RAG]
+git-tree-sha1 = "7ad9d8e2c0a55d1c3cbe2a641f175bd8ade9abae"
+
+[COLLAB]
+git-tree-sha1 = "f0efb10db3ec1f8690db1e7b0445bddc38c79a35"
+
+[COX2]
+git-tree-sha1 = "26c003e69802205af6ba37dc7be58fa3f64f8f5c"
+
+[COX2_MD]
+git-tree-sha1 = "9787c5d620bd79ab3b59ceb85d2a86b240023e1c"
+
+[DBLP_v1]
+git-tree-sha1 = "f6832b9fac7fce22399a0774866730c13204b9af"
+
+[DD]
+git-tree-sha1 = "7ade3a8e49bdbe992aacb5696ac86d0b7dc615b3"
+
+[ENZYMES]
+git-tree-sha1 = "da7c36f0697b27f30b5eb0fb0cd277c926d7ffdd"
+
+[IMDB-BINARY]
+git-tree-sha1 = "11b0ac71dccece6628e995f9a761d7496b5b19cd"
+
+[IMDB-MULTI]
+git-tree-sha1 = "f2fd908e0cfce74a6b59d3dfa91a4946b817236a"
+
+[MUTAG]
+git-tree-sha1 = "69cff433e30c89ad995332cb6b0ac4dc23bf0cda"
+
+[NCI1]
+git-tree-sha1 = "dc874206897d35b4db543c791a79c98902a983e7"
+
+[PROTEINS_full]
+git-tree-sha1 = "2b0258281fb8453536dccca818f869d4c72fd3c3"
+
+[PTC_MR]
+git-tree-sha1 = "dcb060b89d9a2f5c2e529387a5b279254ae8193c"
+
+[REDDIT-BINARY]
+git-tree-sha1 = "b535ad608c5992221cab2b1fb69cff8adb589f4b"
+
+[REDDIT-MULTI-12K]
+git-tree-sha1 = "a65acf9d4de10437fc47cf07a6c69217396117ed"
+
+[REDDIT-MULTI-5K]
+git-tree-sha1 = "914d4cf1d709691d34f92c443ed0ae47ee210829"
+
+[SYNTHETIC]
+git-tree-sha1 = "3a831e55c1208449a19f1436585c709408910ff7"
+
+[SYNTHETICnew]
+git-tree-sha1 = "9852f6351e2e2b65f419cccc9d3dcc0bac24a103"
+
+[Synthie]
+git-tree-sha1 = "f53112510453f9a15022b9a96501f718af4dd3f0"
+
+[github_stargazers]
+git-tree-sha1 = "48a0e9cc7dae89a705114e5d6ad9d815b12eb74e"
+
+[reddit_threads]
+git-tree-sha1 = "4330ecfa4e7ee21b509b95b3f533586564173b89"
+
+[twitch_egos]
+git-tree-sha1 = "cd4fd9b5f0dc9b87b3b7a3d823e8c30cd4915d7f"

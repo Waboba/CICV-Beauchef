@@ -1,0 +1,35 @@
+[project]
+name = "others"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "certifi>=2025.1.31",
+    "grakel",
+    "ipykernel>=6.29.5",
+    "matplotlib>=3.10.6",
+    "networkx>=3.5",
+    "numpy>=2.2.4",
+    "pandas>=2.2.3",
+    "pot>=0.9.6.post1",
+    "pyarrow>=19.0.1",
+    "scikit-learn>=1.6.1",
+    "scipy>=1.15.2",
+    "tqdm>=4.67.1",
+]
+
+[tool.uv.sources]
+grakel = { git = "https://github.com/KeishiS/GraKel", branch = "modify" }
+
+[tool.ruff]
+line-length = 88
+indent-width = 4
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+line-ending = "auto"
+
+[tool.ruff.lint]
+select = ["I"]

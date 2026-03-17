@@ -1,0 +1,6 @@
+numpy==2.1.2
+matplotlib==3.9.2
+networkx==3.3
+PyYAML==6.0.2
+scikit-learn==1.5.2
+pip install -r requirements.txt
